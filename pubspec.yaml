@@ -1,0 +1,86 @@
+name: ma_iscanner_1
+description: "A new Flutter project."
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.5.3
+
+dependencies:
+  flutter:
+    sdk: flutter
+  camera: ^0.10.0+4
+  logger: ^1.1.0
+  cupertino_icons: ^1.0.8
+  image_picker: ^0.8.5+3
+  tflite_flutter: ^0.11.0
+  image: ^3.3.0
+  collection: ^1.15.0 
+  permission_handler: ^11.3.1
+  gallery_saver: ^2.3.2
+  flutter_colorpicker: ^1.0.3
+  #audioplayers: ^6.1.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+  
+
+flutter:
+  fonts:
+    - family: KantumruyPro-Bold
+      fonts:
+        - asset: assets/font/KantumruyPro-Bold.ttf
+    - family: KantumruyPro-Regular
+      fonts:
+        - asset: assets/font/KantumruyPro-Regular.ttf
+    - family: KantumruyPro-MediumItalic
+      fonts:
+        - asset: assets/font/KantumruyPro-MediumItalic.ttf
+  uses-material-design: true
+  assets:
+    - assets/icons/settings.png
+    - assets/icons/camera.png
+    - assets/icons/upload.png
+    - assets/corn.tflite
+    - assets/labels.txt
+    - assets/MaiscannerLogo.png
+    - assets/plant_tips.png
+    #Recommendation tips as image englis and tagalog
+    - assets/images/common_rust_tip1_en.png
+    - assets/images/common_rust_tip2_en.png
+    - assets/images/common_rust_tip3_en.png
+    - assets/images/common_rust_tip4_en.png
+    - assets/images/common_rust_tip5_en.png
+    - assets/images/common_rust_tip1_tl.png
+    - assets/images/common_rust_tip2_tl.png
+    - assets/images/common_rust_tip3_tl.png
+    - assets/images/common_rust_tip4_tl.png
+    - assets/images/common_rust_tip5_tl.png
+
+    - assets/images/northern_leaf_blight_tip1_en.png
+    - assets/images/northern_leaf_blight_tip2_en.png
+    - assets/images/northern_leaf_blight_tip3_en.png
+    - assets/images/northern_leaf_blight_tip4_en.png
+    - assets/images/northern_leaf_blight_tip5_en.png
+    - assets/images/northern_leaf_blight_tip1_tl.png
+    - assets/images/northern_leaf_blight_tip2_tl.png
+    - assets/images/northern_leaf_blight_tip3_tl.png
+    - assets/images/northern_leaf_blight_tip4_tl.png
+    - assets/images/northern_leaf_blight_tip5_tl.png
+    - assets/images/gray_leaf_spot_tip1_en.png
+    - assets/images/gray_leaf_spot_tip2_en.png
+    - assets/images/gray_leaf_spot_tip3_en.png
+    - assets/images/gray_leaf_spot_tip4_en.png
+    - assets/images/gray_leaf_spot_tip5_en.png
+    - assets/images/gray_leaf_spot_tip1_tl.png
+    - assets/images/gray_leaf_spot_tip2_tl.png
+    - assets/images/gray_leaf_spot_tip3_tl.png
+    - assets/images/gray_leaf_spot_tip4_tl.png
+    - assets/images/gray_leaf_spot_tip5_tl.png
+
+
+    
+  

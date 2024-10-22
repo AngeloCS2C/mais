@@ -1,0 +1,7 @@
+banded_leaf
+common_rust
+corn_mosaic
+downy_mildew
+gray_leaf_spot
+healthy
+northern_leaf_blight

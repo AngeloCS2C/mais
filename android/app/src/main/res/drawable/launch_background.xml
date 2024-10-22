@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Default launch splash screen with white background -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Set background to default white -->
+    <item android:drawable="@android:color/white" />
+
+    <!-- If you want to center your launcher icon, you can keep this; otherwise, you can remove it -->
+    <item>
+        <bitmap
+            android:gravity="center"
+            android:src="@mipmap/ic_launcher" /> <!-- Launcher icon -->
+    </item>
+
+</layer-list>
