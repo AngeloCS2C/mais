@@ -6,8 +6,8 @@ import 'package:image_picker/image_picker.dart';
 import 'dart:io';
 import 'package:logger/logger.dart';
 import 'package:flutter/services.dart'; // For default system sounds
-import 'package:gallery_saver/gallery_saver.dart'; // For saving to gallery
 import 'package:flutter_colorpicker/flutter_colorpicker.dart'; // Color picker
+import 'package:file_saver/file_saver.dart'; // For saving to gallery
 import '../services/camera_service.dart'; // Camera logic
 import '../services/ml_service.dart'; // Machine learning logic
 import '../data/disease_info.dart'; // Importing DiseaseInfo
@@ -78,10 +78,20 @@ class HomeScreenState extends State<HomeScreen> {
 
   // Save the captured image to the gallery if auto-save is enabled
   Future<void> _saveToGallery(String imagePath) async {
-    if (autoSavePhoto) {
-      await GallerySaver.saveImage(imagePath, albumName: "Ma-Iscanner");
-      logger.i("Image saved to gallery.");
-    }
+    final file = File(imagePath);
+    final fileName =
+        file.path.split('/').last; // Extract the file name from the path
+
+    // Correct the use of named arguments for saving the file
+    await FileSaver.instance.saveFile(
+      name: fileName, // The file name (use the 'name' argument)
+      bytes: await file
+          .readAsBytes(), // The file content (use the 'bytes' argument)
+      ext: "jpg", // The file extension (use the 'ext' argument)
+      mimeType: MimeType.jpeg, // Specify the correct MIME type
+    );
+
+    logger.i("Image saved to gallery: $fileName");
   }
 
   // Open the settings modal with options for language, background color, etc.
@@ -121,21 +131,6 @@ class HomeScreenState extends State<HomeScreen> {
                           });
                         },
                       ),
-                    ),
-
-                    // Font size adjustment slider
-                    const Text('Adjust Font Size'),
-                    Slider(
-                      value: fontSize,
-                      min: 12,
-                      max: 24,
-                      divisions: 6,
-                      label: fontSize.toStringAsFixed(0),
-                      onChanged: (value) {
-                        setState(() {
-                          fontSize = value;
-                        });
-                      },
                     ),
 
                     // Color picker for background
@@ -520,7 +515,9 @@ class HomeScreenState extends State<HomeScreen> {
         showIdentifyingModal = true; // Show identifying modal
         widget.cameraService!.controller.pausePreview(); // Pause preview
       });
-      await _saveToGallery(capturedFile.path); // Auto-save to gallery
+      if (autoSavePhoto) {
+        await _saveToGallery(capturedFile.path); // Auto-save to gallery
+      }
       await classifyImage();
     } else {
       logger.e("Capture failed: No file returned.");

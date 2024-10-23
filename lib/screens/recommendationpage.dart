@@ -7,6 +7,7 @@ class RecommendationPage extends StatefulWidget {
   final String imagePath;
   final Map<String, dynamic>? details;
   final bool isHealthy;
+  final double fontSize; // Font size passed from HomeScreen
 
   const RecommendationPage({
     super.key,
@@ -14,7 +15,7 @@ class RecommendationPage extends StatefulWidget {
     required this.details,
     required this.imagePath,
     required this.isHealthy,
-    required double fontSize,
+    required this.fontSize,
   });
 
   @override
@@ -23,6 +24,14 @@ class RecommendationPage extends StatefulWidget {
 
 class RecommendationPageState extends State<RecommendationPage> {
   String currentLanguage = 'en'; // Track current language
+  double currentFontSize = 16; // Track current font size
+  String fontSizeLabel = "Medium"; // Label for font size
+
+  @override
+  void initState() {
+    super.initState();
+    currentFontSize = widget.fontSize; // Initialize with passed font size
+  }
 
   // Play system click sound when buttons are pressed
   void _playClickSound() {
@@ -33,6 +42,25 @@ class RecommendationPageState extends State<RecommendationPage> {
   void toggleLanguage() {
     setState(() {
       currentLanguage = currentLanguage == 'en' ? 'tl' : 'en';
+    });
+  }
+
+  // Cycle through font sizes (small, medium, large, extra large)
+  void toggleFontSize() {
+    setState(() {
+      if (currentFontSize == 12) {
+        currentFontSize = 16;
+        fontSizeLabel = "Medium";
+      } else if (currentFontSize == 16) {
+        currentFontSize = 20;
+        fontSizeLabel = "Large";
+      } else if (currentFontSize == 20) {
+        currentFontSize = 24;
+        fontSizeLabel = "Extra Large";
+      } else {
+        currentFontSize = 12;
+        fontSizeLabel = "Small";
+      }
     });
   }
 
@@ -51,7 +79,6 @@ class RecommendationPageState extends State<RecommendationPage> {
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-                // Plant Tips Image at the top
                 ClipRRect(
                   borderRadius: BorderRadius.circular(12),
                   child: Image.asset(
@@ -93,52 +120,43 @@ class RecommendationPageState extends State<RecommendationPage> {
                       itemCount: widget
                           .details!['recommendations'][currentLanguage].length,
                       itemBuilder: (context, index) {
-                        // Extract text and image from recommendation map
                         final recommendation =
                             widget.details!['recommendations'][currentLanguage]
                                 [index];
                         final recommendationText =
-                            recommendation['text'] as String; // Extract text
-                        final imagePath =
-                            recommendation['image'] as String; // Extract image
-                        final explanation = recommendation['explanation']
-                            as String; // Extract explanation
+                            recommendation['text'] as String;
+                        final imagePath = recommendation['image'] as String;
+                        final explanation =
+                            recommendation['explanation'] as String;
 
                         return Padding(
                           padding: const EdgeInsets.symmetric(vertical: 8.0),
                           child: Column(
                             children: [
-                              // Tip image
                               ClipRRect(
                                 borderRadius: BorderRadius.circular(12),
                                 child: Image.asset(
-                                  imagePath, // Load image for the tip
+                                  imagePath,
                                   width: double.infinity,
                                   fit: BoxFit.cover,
                                 ),
                               ),
                               const SizedBox(height: 8),
-
-                              // Tip text
                               Text(
                                 recommendationText,
-                                style: const TextStyle(
-                                  fontSize: 16,
-                                  fontWeight: FontWeight
-                                      .bold, // Bold for recommendation
+                                style: TextStyle(
+                                  fontSize: currentFontSize,
+                                  fontWeight: FontWeight.bold,
                                   color: Colors.black87,
                                 ),
                                 textAlign: TextAlign.left,
                               ),
                               const SizedBox(height: 4),
-
-                              // Explanation text
                               Text(
                                 explanation,
-                                style: const TextStyle(
-                                  fontSize: 14,
-                                  fontWeight:
-                                      FontWeight.w300, // Light for explanation
+                                style: TextStyle(
+                                  fontSize: currentFontSize - 2,
+                                  fontWeight: FontWeight.w300,
                                   color: Colors.black54,
                                 ),
                                 textAlign: TextAlign.left,
@@ -213,14 +231,13 @@ class RecommendationPageState extends State<RecommendationPage> {
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: DefaultTextStyle(
-          style: const TextStyle(
-            fontFamily: 'KantumruyPro-Regular', // Default font for contents
+          style: TextStyle(
+            fontFamily: 'KantumruyPro-Regular',
             color: Colors.black87,
-            fontSize: 16, // Default font size for all text
+            fontSize: currentFontSize, // Apply dynamic font size
           ),
           child: Column(
             children: [
-              // Display the analyzed image with border radius
               ClipRRect(
                 borderRadius: BorderRadius.circular(20),
                 child: Image.file(
@@ -232,24 +249,46 @@ class RecommendationPageState extends State<RecommendationPage> {
               ),
               const SizedBox(height: 16),
 
-              // Display Disease Name with a stroke and green border
-              Container(
-                padding:
-                    const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
-                decoration: BoxDecoration(
-                  color: Colors.transparent,
-                  borderRadius: BorderRadius.circular(12),
-                  border: Border.all(
-                      color: const Color(0xFF388E3C), width: 1), // Green border
-                ),
-                child: Text(
-                  widget.disease.toUpperCase(),
-                  style: const TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black),
-                  textAlign: TextAlign.center,
-                ),
+              // Display Disease Name with font size adjustment beside it
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Container(
+                    padding:
+                        const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+                    decoration: BoxDecoration(
+                      color: Colors.transparent,
+                      borderRadius: BorderRadius.circular(12),
+                      border:
+                          Border.all(color: const Color(0xFF388E3C), width: 1),
+                    ),
+                    child: Text(
+                      widget.disease.toUpperCase(),
+                      style: TextStyle(
+                        fontSize: currentFontSize + 4,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
+                  // Font size adjustment with label beside the disease name
+                  ElevatedButton.icon(
+                    onPressed: () {
+                      _playClickSound(); // Play sound on click
+                      toggleFontSize(); // Cycle through font sizes
+                    },
+                    icon: const Icon(Icons.text_fields, size: 20),
+                    label: Text(fontSizeLabel),
+                    style: ElevatedButton.styleFrom(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 12, vertical: 8),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                    ),
+                  ),
+                ],
               ),
               const SizedBox(height: 16),
 
@@ -258,7 +297,6 @@ class RecommendationPageState extends State<RecommendationPage> {
                 Expanded(
                   child: Column(
                     children: [
-                      // Switch Language Button
                       ElevatedButton(
                         onPressed: () {
                           _playClickSound(); // Play sound on click
@@ -281,13 +319,11 @@ class RecommendationPageState extends State<RecommendationPage> {
                         ),
                       ),
                       const SizedBox(height: 16),
-
-                      // Healthy Message
                       Center(
                         child: Text(
                           healthyMessage[currentLanguage]!,
-                          style: const TextStyle(
-                            fontSize: 18,
+                          style: TextStyle(
+                            fontSize: currentFontSize,
                             fontWeight: FontWeight.w500,
                             color: Colors.black87,
                           ),
@@ -298,7 +334,6 @@ class RecommendationPageState extends State<RecommendationPage> {
                   ),
                 )
               else
-                // If the leaf is not healthy, show the details
                 Expanded(
                   child: Container(
                     padding: const EdgeInsets.all(16.0),
@@ -325,8 +360,7 @@ class RecommendationPageState extends State<RecommendationPage> {
                                 style: TextStyle(
                                     fontFamily: 'KantumruyPro-Bold',
                                     fontSize: 18,
-                                    fontWeight:
-                                        FontWeight.w900, // Bold for header
+                                    fontWeight: FontWeight.w900,
                                     color: Colors.black87),
                               ),
                               ElevatedButton(
@@ -356,10 +390,10 @@ class RecommendationPageState extends State<RecommendationPage> {
                           Text(
                             details!['scientificName'][currentLanguage] ??
                                 'N/A',
-                            style: const TextStyle(
+                            style: TextStyle(
                                 fontFamily: 'KantumruyPro-MediumItalic',
-                                fontSize: 16,
-                                color: Color.fromARGB(221, 58, 55, 55)),
+                                fontSize: currentFontSize - 2,
+                                color: const Color.fromARGB(221, 58, 55, 55)),
                           ),
                           const SizedBox(height: 16),
                           const Text(
@@ -372,8 +406,9 @@ class RecommendationPageState extends State<RecommendationPage> {
                           const SizedBox(height: 8),
                           Text(
                             details['description'][currentLanguage] ?? 'N/A',
-                            style: const TextStyle(
-                                fontSize: 16, color: Colors.black87),
+                            style: TextStyle(
+                                fontSize: currentFontSize,
+                                color: Colors.black87),
                           ),
                           const SizedBox(height: 16),
                           const Text(
@@ -381,14 +416,15 @@ class RecommendationPageState extends State<RecommendationPage> {
                             style: TextStyle(
                                 fontFamily: 'KantumruyPro-Bold',
                                 fontSize: 18,
-                                fontWeight: FontWeight.w900, // Bold for header
+                                fontWeight: FontWeight.w900,
                                 color: Colors.black87),
                           ),
                           const SizedBox(height: 8),
                           Text(
                             details['effects'][currentLanguage] ?? 'N/A',
-                            style: const TextStyle(
-                                fontSize: 16, color: Colors.black87),
+                            style: TextStyle(
+                                fontSize: currentFontSize,
+                                color: Colors.black87),
                           ),
                         ],
                       ),
@@ -397,7 +433,6 @@ class RecommendationPageState extends State<RecommendationPage> {
                 ),
               const SizedBox(height: 16),
 
-              // If the leaf is healthy, do not show the plant tips button
               if (!widget.isHealthy)
                 SizedBox(
                   width: double.infinity,

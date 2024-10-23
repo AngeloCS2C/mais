@@ -18,7 +18,9 @@ dependencies:
   image: ^3.3.0
   collection: ^1.15.0 
   permission_handler: ^11.3.1
-  gallery_saver: ^2.3.2
+  #gallery_saver: ^2.3.2
+  #image_gallery_saver: ^ 2.0.3
+  file_saver: ^0.2.14
   flutter_colorpicker: ^1.0.3
   #audioplayers: ^6.1.0
 

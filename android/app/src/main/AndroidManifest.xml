@@ -15,7 +15,9 @@
     <application
         android:label="ma_iscanner_1"
         android:name="${applicationName}"
+        android:requestLegacyExternalStorage="true"
         android:icon="@mipmap/ic_launcher">
+        
         
         <activity
             android:name=".MainActivity"
