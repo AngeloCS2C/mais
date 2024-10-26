@@ -284,73 +284,161 @@ Bioseed® 9909 – Kilala sa magandang adaptasyon sa Pilipinas, ang barayting it
     },
     // Placeholder for other diseases
     'banded_leaf': {
-      'scientificName': {'en': 'Unknown', 'tl': 'Hindi alam'},
+      'scientificName': {
+        'en': 'Rhizoctonia solani',
+        'tl': 'Rhizoctonia solani'
+      },
       'description': {
-        'en': 'Description for banded leaf.',
-        'tl': 'Deskripsyon para sa banded leaf.'
+        'en':
+            'Banded leaf and sheath blight (BLSB) caused by necrotic fungus Rhizoctonia solani f. sp. Sasakii is one of the major disease of maize. BLSB is reported globally and cause complete failure of maize crop depending upon the environmental conditions.',
+        'tl':
+            'Ang Banded Leaf and Sheath Blight (BLSB) na dulot ng nekrotikong fungus na Rhizoctonia solani f. sp. Sasakii ay isa sa mga pangunahing sakit ng mais. Ang BLSB ay naiulat sa buong mundo at maaaring magdulot ng ganap na pagkasira ng ani ng mais depende sa mga kondisyon ng kapaligiran.'
       },
       'effects': {
-        'en': 'Effects of banded leaf.',
-        'tl': 'Mga epekto ng banded leaf.'
+        'en':
+            'The disease develops on leaves, sheaths, and stalks and can spread to the ears. Leaves and sheaths of corn develop a characteristic symptoms of concentric bands and rings that are discolored, brown, tan or grey in color.n color.',
+        'tl':
+            'Ang sakit ay umuunlad sa mga dahon, balot ng dahon, at tangkay at maaaring kumalat sa bunga. Ang mga dahon at balot ng mais ay nagpapakita ng natatanging sintomas ng magkakasunod na pabilog na marka na may mga kulay na kupas, kayumanggi, kulay-tan, o kulay-abo.'
       },
       'recommendations': {
         'en': [
           {
-            'text': '1. Recommendation 1 for banded leaf.',
+            'text': '1. Use resistant varieties, if available.',
             'image': 'assets/images/banded_leaf_tip1_en.png',
             'explanation': '', // Added empty explanation
           },
           {
-            'text': '2. Recommendation 2 for banded leaf.',
+            'text': '2. Avoid high crop densities in the field.',
+            'image': 'assets/images/banded_leaf_tip2_en.png',
+            'explanation': '', // Added empty explanation
+          },
+          {
+            'text': '3. Remove and burn infected plants after harvest.',
+            'image': 'assets/images/banded_leaf_tip2_en.png',
+            'explanation': '', // Added empty explanation
+          },
+          {
+            'text':
+                '4. Make sure to keep the field clean and not to injure plants.',
+            'image': 'assets/images/banded_leaf_tip2_en.png',
+            'explanation': '', // Added empty explanation
+          },
+          {
+            'text':
+                '5. Strip off the lower infected leaves touching the soil along with their sheaths.',
+            'image': 'assets/images/banded_leaf_tip2_en.png',
+            'explanation': '', // Added empty explanation
+          },
+          {
+            'text':
+                '6. Crop rotation may help to control the spread of the disease to some degree.',
             'image': 'assets/images/banded_leaf_tip2_en.png',
             'explanation': '', // Added empty explanation
           }
         ],
         'tl': [
           {
-            'text': '1. Rekomendasyon 1 para sa banded leaf.',
+            'text': '1. Gumamit ng mga resistant na uri, kung available.',
             'image': 'assets/images/banded_leaf_tip1_tl.png',
             'explanation': '', // Added empty explanation
           },
           {
-            'text': '2. Rekomendasyon 2 para sa banded leaf.',
+            'text': '2. Iwasan ang sobrang siksik na pagtatanim sa bukid.',
+            'image': 'assets/images/banded_leaf_tip2_tl.png',
+            'explanation': '', // Added empty explanation
+          },
+          {
+            'text':
+                '3. Alisin at sunugin ang mga nahawaang halaman pagkatapos ng ani.',
+            'image': 'assets/images/banded_leaf_tip2_tl.png',
+            'explanation': '', // Added empty explanation
+          },
+          {
+            'text':
+                '4. Siguraduhing panatilihing malinis ang bukid at iwasang masugatan ang mga halaman.',
+            'image': 'assets/images/banded_leaf_tip2_tl.png',
+            'explanation': '', // Added empty explanation
+          },
+          {
+            'text':
+                '5. Alisin ang mga mas mababang nahawaang dahon na nakadikit sa lupa kasama ang kanilang balot.',
+            'image': 'assets/images/banded_leaf_tip2_tl.png',
+            'explanation': '', // Added empty explanation
+          },
+          {
+            'text':
+                '6. Ang crop rotation ay maaaring makatulong upang kontrolin ang pagkalat ng sakit hanggang sa ilang antas.',
             'image': 'assets/images/banded_leaf_tip2_tl.png',
             'explanation': '', // Added empty explanation
           }
-        ]
+        ],
       }
     },
     'corn_mosaic': {
-      'scientificName': {'en': 'Unknown', 'tl': 'Hindi alam'},
+      'scientificName': {
+        'en': 'Maize mosaic nucleorhabdovirus',
+        'tl': 'Maize mosaic nucleorhabdovirus'
+      },
       'description': {
-        'en': 'Description for corn mosaic.',
-        'tl': 'Deskripsyon para sa corn mosaic.'
+        'en':
+            'Maize dwarf mosaic is caused by the Maize dwarf mosaic virus. Infected plants have a stippled (small, discolored specks) mottle or mosaic of light and dark green that may develop into narrow streaks on the youngest leaves. There may be a shortening of internodes causing a stunted, bunchy appearance of the plant. ',
+        'tl': '''
+Ang Maize dwarf mosaic ay dulot ng Maize dwarf mosaic virus. Ang mga apektadong halaman ay may makikitang mantsa o mosaic ng magagaan at madilim na berdeng kulay na maaaring magbunga ng makitid na guhit sa pinakabatang mga dahon. Maaaring magkaroon ng pagpapaikli ng internodes na nagreresulta sa pagkabansot at pagkakagrupo ng halaman.'''
       },
       'effects': {
-        'en': 'Effects of corn mosaic.',
-        'tl': 'Mga epekto ng corn mosaic.'
+        'en':
+            '''Plants are stunted, and either the cobs do not develop, or they are deformed with fewer seeds than normal. However, the number of plants infected with the disease is usually quite small, perhaps 1-2%, and so it is unlikely that yields overall are reduced greatly.''',
+        'tl':
+            'Ang mga halaman ay nananatiling maliit o hindi lumalaki ng maayos, at maaaring hindi mabuo ang mga bunga o magkaroon ng depekto ang mga ito na may mas kaunting buto kaysa karaniwan. Gayunpaman, ang bilang ng mga halaman na apektado ng sakit ay kadalasang maliit lamang, humigit-kumulang 1-2%, kaya malabong magdulot ito ng malaking pagbawas sa kabuuang ani.'
       },
       'recommendations': {
         'en': [
           {
-            'text': '1. Recommendation 1 for corn mosaic.',
+            'text': '1. Pull out plants as soon as symptoms are seen',
             'image': 'assets/images/corn_mosaic_tip1_en.png',
             'explanation': '', // Added empty explanation
           },
           {
-            'text': '2. Recommendation 2 for corn mosaic.',
+            'text':
+                '2.	Do not wait; otherwise, the insects will breed and spread the disease.',
+            'image': 'assets/images/corn_mosaic_tip2_en.png',
+            'explanation': '', // Added empty explanation
+          },
+          {
+            'text':
+                '3.	When pulling out the plants grasp the young leaves, holding them together, preventing the insects escaping from the “funnel” of leaves.',
+            'image': 'assets/images/corn_mosaic_tip2_en.png',
+            'explanation': '', // Added empty explanation
+          },
+          {
+            'text':
+                '4.	Put the plants into a sack and burn them, destroying plants and insects.',
             'image': 'assets/images/corn_mosaic_tip2_en.png',
             'explanation': '', // Added empty explanation
           }
         ],
         'tl': [
           {
-            'text': '1. Rekomendasyon 1 para sa corn mosaic.',
+            'text':
+                '1. Bunutin ang mga halaman sa sandaling makita ang mga sintomas.',
             'image': 'assets/images/corn_mosaic_tip1_tl.png',
             'explanation': '', // Added empty explanation
           },
           {
-            'text': '2. Rekomendasyon 2 para sa corn mosaic.',
+            'text':
+                '2. Huwag maghintay; kung hindi, magpaparami ang mga insekto at kakalat ang sakit.',
+            'image': 'assets/images/corn_mosaic_tip2_tl.png',
+            'explanation': '', // Added empty explanation
+          },
+          {
+            'text':
+                '3. Kapag binubunot ang mga halaman, hawakan ang mga batang dahon at pagsama-samahin ang mga ito upang maiwasan ang pagtakas ng mga insekto mula sa “funnel” ng mga dahon.',
+            'image': 'assets/images/corn_mosaic_tip2_tl.png',
+            'explanation': '', // Added empty explanation
+          },
+          {
+            'text':
+                '4. Ilagay ang mga halaman sa sako at sunugin upang masira ang mga halaman at insekto',
             'image': 'assets/images/corn_mosaic_tip2_tl.png',
             'explanation': '', // Added empty explanation
           }
@@ -358,40 +446,91 @@ Bioseed® 9909 – Kilala sa magandang adaptasyon sa Pilipinas, ang barayting it
       }
     },
     'downy_mildew': {
-      'scientificName': {'en': 'Unknown', 'tl': 'Hindi alam'},
+      'scientificName': {
+        'en': 'Peronosclerospora philippinensis',
+        'tl': 'Peronosclerospora philippinensis'
+      },
       'description': {
-        'en': 'Description for downy mildew.',
-        'tl': 'Deskripsyon para sa downy mildew.'
+        'en':
+            ' P. philippinensis is an obligate pathogen which requires a living host for it to grow and proliferate. Infection occurs when airborne conidia from an infected crop attaches to a susceptible crop host, but seedborne infections are probably in important means of spread of the pathogen. ',
+        'tl':
+            'Ang P. philippinensis ay isang obligadong pathogen na nangangailangan ng buhay na host upang ito ay lumaki at dumami. Ang impeksyon ay nangyayari kapag ang conidia na dala ng hangin mula sa apektadong pananim ay dumikit sa madaling maapektuhang host na pananim, ngunit ang mga impeksyong dala ng buto ay malamang na mahalagang paraan ng pagkalat ng pathogen.'
       },
       'effects': {
-        'en': 'Effects of downy mildew.',
-        'tl': 'Mga epekto ng downy mildew.'
+        'en':
+            'Tassels may be malformed and produce less pollen, and ears may be aborted',
+        'tl': '''
+Maaaring maging depektibo ang mga tassel at maglabas ng mas kaunting polen, at ang mga bunga ay maaaring hindi mabuo.'''
       },
       'recommendations': {
         'en': [
           {
-            'text': '1. Recommendation 1 for downy mildew.',
+            'text': '1. Use resistant varieties, if available.',
             'image': 'assets/images/downy_mildew_tip1_en.png',
             'explanation': '', // Added empty explanation
           },
           {
-            'text': '2. Recommendation 2 for downy mildew.',
+            'text': '2. Use fungicide-coated seeds.',
             'image': 'assets/images/downy_mildew_tip2_en.png',
             'explanation': '', // Added empty explanation
-          }
+          },
+          {
+            'text': '3. Avoid areas prone to flooding.',
+            'image': 'assets/images/downy_mildew_tip2_en.png',
+            'explanation': '', // Added empty explanation
+          },
+          {
+            'text': '4. Provide adequate drainage for surface water.',
+            'image': 'assets/images/downy_mildew_tip2_en.png',
+            'explanation': '', // Added empty explanation
+          },
+          {
+            'text':
+                '5. Maintain good field sanitation (e.g. remove and burn infected plants/plant parts as soon as initial symptoms are observed).',
+            'image': 'assets/images/downy_mildew_tip2_en.png',
+            'explanation': '', // Added empty explanation
+          },
+          {
+            'text':
+                '6. Spray with fungicides such as metalaxyl+mancozeb (e.g. Ridomil®), dimethomorph+mancozeb (e.g. Acrobat®), propineb (e.g. Antracol®) or maneb(e.g. Maneb®).',
+            'image': 'assets/images/downy_mildew_tip2_en.png',
+            'explanation': '', // Added empty explanation
+          },
         ],
         'tl': [
           {
-            'text': '1. Rekomendasyon 1 para sa downy mildew.',
+            'text': '1. Gumamit ng mga resistant na uri, kung available.',
             'image': 'assets/images/downy_mildew_tip1_tl.png',
             'explanation': '', // Added empty explanation
           },
           {
-            'text': '2. Rekomendasyon 2 para sa downy mildew.',
+            'text': '2. Gumamit ng mga binhi na may fungicide coating.',
             'image': 'assets/images/downy_mildew_tip2_tl.png',
             'explanation': '', // Added empty explanation
-          }
-        ]
+          },
+          {
+            'text': '3. Iwasan ang mga lugar na madalas bahain.',
+            'image': 'assets/images/downy_mildew_tip2_tl.png',
+            'explanation': '', // Added empty explanation
+          },
+          {
+            'text': '4. Siguraduhing may sapat na daluyan para sa tubig-ulan.',
+            'image': 'assets/images/downy_mildew_tip2_tl.png',
+            'explanation': '', // Added empty explanation
+          },
+          {
+            'text':
+                '5. Panatilihin ang kalinisan sa bukid (hal. alisin at sunugin ang mga nahawaang halaman o bahagi ng halaman sa oras na makita ang mga unang sintomas).',
+            'image': 'assets/images/downy_mildew_tip2_tl.png',
+            'explanation': '', // Added empty explanation
+          },
+          {
+            'text':
+                '6. Mag-spray ng mga fungicide tulad ng metalaxyl+mancozeb (hal. Ridomil®), dimethomorph+mancozeb (hal. Acrobat®), propineb (hal. Antracol®) o maneb (hal. Maneb®).',
+            'image': 'assets/images/downy_mildew_tip2_tl.png',
+            'explanation': '', // Added empty explanation
+          },
+        ],
       }
     },
     'healthy': {
