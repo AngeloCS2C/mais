@@ -139,6 +139,13 @@ class RecommendationPageState extends State<RecommendationPage> {
                                   imagePath,
                                   width: double.infinity,
                                   fit: BoxFit.cover,
+                                  errorBuilder: (context, error, stackTrace) {
+                                    // Handle the error, e.g., display a placeholder or nothing
+                                    return const SizedBox
+                                        .shrink(); // To display nothing
+                                    // Or, display a placeholder:
+                                    // return Image.asset('assets/placeholder.png');
+                                  },
                                 ),
                               ),
                               const SizedBox(height: 8),
