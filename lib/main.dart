@@ -20,6 +20,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Ma Iscanner',
       theme: ThemeData(primarySwatch: Colors.green),
       home: SplashScreen(camera: camera), // Pass camera to SplashScreen
