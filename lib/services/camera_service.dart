@@ -20,6 +20,22 @@ class CameraService {
     }
   }
 
+  // Start image streaming with a provided callback
+  void startImageStream(Function(CameraImage) onAvailable) {
+    if (_controller != null && _controller!.value.isInitialized) {
+      _controller!.startImageStream(onAvailable);
+      logger.i('Camera image stream started');
+    }
+  }
+
+  // Stop image streaming
+  void stopImageStream() {
+    if (_controller != null && _controller!.value.isStreamingImages) {
+      _controller!.stopImageStream();
+      logger.i('Camera image stream stopped');
+    }
+  }
+
   Future<XFile?> captureImage() async {
     try {
       return await _controller?.takePicture();
@@ -41,6 +57,9 @@ class CameraService {
   CameraController get controller => _controller!;
 
   void dispose() {
-    _controller?.dispose();
+    if (_controller != null) {
+      _controller!.dispose();
+      logger.i('Camera controller disposed');
+    }
   }
 }

@@ -7,7 +7,7 @@ class RecommendationPage extends StatefulWidget {
   final String imagePath;
   final Map<String, dynamic>? details;
   final bool isHealthy;
-  final double fontSize; // Font size passed from HomeScreen
+  final double fontSize;
 
   const RecommendationPage({
     super.key,
@@ -23,29 +23,28 @@ class RecommendationPage extends StatefulWidget {
 }
 
 class RecommendationPageState extends State<RecommendationPage> {
-  String currentLanguage = 'en'; // Track current language
-  double currentFontSize = 16; // Track current font size
-  String fontSizeLabel = "Medium"; // Label for font size
+  String currentLanguage = 'en';
+  double currentFontSize = 16;
+  String fontSizeLabel = "Medium";
 
   @override
   void initState() {
     super.initState();
-    currentFontSize = widget.fontSize; // Initialize with passed font size
+    currentFontSize = widget.fontSize;
   }
 
-  // Play system click sound when buttons are pressed
   void _playClickSound() {
     SystemSound.play(SystemSoundType.click);
   }
 
-  // Toggle language between English and Tagalog
   void toggleLanguage() {
     setState(() {
-      currentLanguage = currentLanguage == 'en' ? 'tl' : 'en';
+      currentLanguage = currentLanguage == 'en'
+          ? 'tl'
+          : 'en'; // Switch between English and Tagalog
     });
   }
 
-  // Cycle through font sizes (small, medium, large, extra large)
   void toggleFontSize() {
     setState(() {
       if (currentFontSize == 12) {
@@ -64,7 +63,6 @@ class RecommendationPageState extends State<RecommendationPage> {
     });
   }
 
-  // Show recommendations modal dialog with images for each tip
   void showRecommendationsModal(BuildContext context) {
     showDialog(
       context: context,
@@ -73,7 +71,7 @@ class RecommendationPageState extends State<RecommendationPage> {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(20),
           ),
-          backgroundColor: const Color(0xFFF5F5DC), // Light beige background
+          backgroundColor: const Color(0xFFF5F5DC),
           child: Padding(
             padding: const EdgeInsets.all(16.0),
             child: Column(
@@ -82,34 +80,30 @@ class RecommendationPageState extends State<RecommendationPage> {
                 ClipRRect(
                   borderRadius: BorderRadius.circular(12),
                   child: Image.asset(
-                    'assets/plant_tips.png', // Example image asset
+                    'assets/plant_tips.png',
                     height: 100,
                     width: 100,
                     fit: BoxFit.cover,
                   ),
                 ),
                 const SizedBox(height: 16),
-
-                // Title with a yellow background and green shadow
                 const Text(
                   'Plant Tips',
                   style: TextStyle(
                     fontSize: 22,
                     fontWeight: FontWeight.bold,
-                    color: Color(0xFF4CAF50), // Green color
+                    color: Color(0xFF4CAF50),
                     shadows: [
                       Shadow(
                         offset: Offset(2, 2),
                         blurRadius: 4,
-                        color: Color(0xFFE7E713), // Yellow shadow
+                        color: Color(0xFFE7E713),
                       ),
                     ],
                   ),
                   textAlign: TextAlign.center,
                 ),
                 const SizedBox(height: 16),
-
-                // Scrollable recommendations with images and green scrollbar
                 Expanded(
                   child: Scrollbar(
                     thumbVisibility: true,
@@ -117,12 +111,11 @@ class RecommendationPageState extends State<RecommendationPage> {
                     radius: const Radius.circular(10),
                     scrollbarOrientation: ScrollbarOrientation.right,
                     child: ListView.builder(
-                      itemCount: widget
-                          .details!['recommendations'][currentLanguage].length,
+                      itemCount:
+                          widget.details!['plant_tips'][currentLanguage].length,
                       itemBuilder: (context, index) {
-                        final recommendation =
-                            widget.details!['recommendations'][currentLanguage]
-                                [index];
+                        final recommendation = widget.details!['plant_tips']
+                            [currentLanguage][index];
                         final recommendationText =
                             recommendation['text'] as String;
                         final imagePath = recommendation['image'] as String;
@@ -169,19 +162,16 @@ class RecommendationPageState extends State<RecommendationPage> {
                   ),
                 ),
                 const SizedBox(height: 16),
-
-                // Close Button
                 SizedBox(
                   width: double.infinity,
                   child: ElevatedButton(
                     onPressed: () {
-                      _playClickSound(); // Play sound on click
+                      _playClickSound();
                       Navigator.pop(context);
                     },
                     style: ElevatedButton.styleFrom(
-                      backgroundColor:
-                          const Color(0xFF4CAF50), // Matching green
-                      padding: const EdgeInsets.symmetric(vertical: 16),
+                      backgroundColor: const Color(0xFF4CAF50),
+                      padding: const EdgeInsets.symmetric(vertical: 10),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(20),
                       ),
@@ -206,8 +196,6 @@ class RecommendationPageState extends State<RecommendationPage> {
   @override
   Widget build(BuildContext context) {
     final details = widget.details;
-
-    // Healthy leaf messages in English and Tagalog
     final healthyMessage = {
       'en': 'Your leaf is healthy. Thank you for using Ma-Isanner!',
       'tl': 'Ang iyong dahon ay malusog. Salamat sa paggamit ng Ma-Isanner!',
@@ -215,26 +203,35 @@ class RecommendationPageState extends State<RecommendationPage> {
 
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: const Color(0xFFE7E713), // Yellow background
+        backgroundColor: const Color(0xFFE7E713),
         elevation: 0,
         title: const Text('Ma-iscanner', style: TextStyle(color: Colors.black)),
         centerTitle: true,
+        actions: [
+          IconButton(
+            onPressed: () {
+              _playClickSound();
+              toggleFontSize();
+            },
+            icon: const Icon(Icons.text_fields, color: Colors.black),
+          ),
+        ],
         leading: IconButton(
           icon: const Icon(Icons.arrow_back, color: Colors.black),
           onPressed: () {
-            _playClickSound(); // Play sound on click
+            _playClickSound();
             Navigator.pop(context);
           },
         ),
       ),
-      backgroundColor: const Color(0xFFE7E713), // Entire page yellow
+      backgroundColor: const Color(0xFFE7E713),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: DefaultTextStyle(
           style: TextStyle(
             fontFamily: 'KantumruyPro-Regular',
             color: Colors.black87,
-            fontSize: currentFontSize, // Apply dynamic font size
+            fontSize: currentFontSize,
           ),
           child: Column(
             children: [
@@ -248,11 +245,10 @@ class RecommendationPageState extends State<RecommendationPage> {
                 ),
               ),
               const SizedBox(height: 16),
-
-              // Display Disease Name with font size adjustment beside it
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
+                  // Result Box with fixed font size
                   Container(
                     padding:
                         const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
@@ -264,22 +260,22 @@ class RecommendationPageState extends State<RecommendationPage> {
                     ),
                     child: Text(
                       widget.disease.toUpperCase(),
-                      style: TextStyle(
-                        fontSize: currentFontSize + 4,
+                      style: const TextStyle(
+                        fontSize: 20, // Fixed font size
                         fontWeight: FontWeight.bold,
                         color: Colors.black,
                       ),
                       textAlign: TextAlign.center,
                     ),
                   ),
-                  // Font size adjustment with label beside the disease name
                   ElevatedButton.icon(
                     onPressed: () {
-                      _playClickSound(); // Play sound on click
-                      toggleFontSize(); // Cycle through font sizes
+                      _playClickSound();
+                      toggleLanguage();
                     },
-                    icon: const Icon(Icons.text_fields, size: 20),
-                    label: Text(fontSizeLabel),
+                    icon: const Icon(Icons.language, size: 20),
+                    label:
+                        Text(currentLanguage == 'en' ? 'Tagalog' : 'English'),
                     style: ElevatedButton.styleFrom(
                       padding: const EdgeInsets.symmetric(
                           horizontal: 12, vertical: 8),
@@ -291,35 +287,9 @@ class RecommendationPageState extends State<RecommendationPage> {
                 ],
               ),
               const SizedBox(height: 16),
-
-              // If the leaf is healthy, display a healthy message and allow language switching
-              if (widget.isHealthy)
-                Expanded(
-                  child: Column(
-                    children: [
-                      ElevatedButton(
-                        onPressed: () {
-                          _playClickSound(); // Play sound on click
-                          toggleLanguage();
-                        },
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.green,
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 16, vertical: 8),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(20),
-                          ),
-                        ),
-                        child: Text(
-                          currentLanguage == 'en'
-                              ? 'SWITCH TO TAGALOG'
-                              : 'SWITCH TO ENGLISH',
-                          style: const TextStyle(
-                              fontSize: 12, color: Colors.white),
-                        ),
-                      ),
-                      const SizedBox(height: 16),
-                      Center(
+              widget.isHealthy
+                  ? Expanded(
+                      child: Center(
                         child: Text(
                           healthyMessage[currentLanguage]!,
                           style: TextStyle(
@@ -330,115 +300,57 @@ class RecommendationPageState extends State<RecommendationPage> {
                           textAlign: TextAlign.center,
                         ),
                       ),
-                    ],
-                  ),
-                )
-              else
-                Expanded(
-                  child: Container(
-                    padding: const EdgeInsets.all(16.0),
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(12),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.black.withOpacity(0.1),
-                          blurRadius: 8,
-                          offset: const Offset(0, 2),
+                    )
+                  : Expanded(
+                      child: SingleChildScrollView(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'SCIENTIFIC NAME',
+                              style: TextStyle(
+                                fontSize: currentFontSize,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black87,
+                              ),
+                            ),
+                            const SizedBox(height: 4), // Added spacing
+                            Text(
+                              details!['scientificName'][currentLanguage] ??
+                                  'N/A',
+                              style: TextStyle(
+                                fontSize: currentFontSize,
+                                color: Colors.black87,
+                              ),
+                            ),
+                            const SizedBox(height: 16), // Added spacing
+                            Text(
+                              'DESCRIPTION',
+                              style: TextStyle(
+                                fontSize: currentFontSize,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black87,
+                              ),
+                            ),
+                            const SizedBox(height: 4), // Added spacing
+                            Text(
+                              details['description'][currentLanguage] ?? 'N/A',
+                              style: TextStyle(
+                                fontSize: currentFontSize,
+                                color: Colors.black87,
+                              ),
+                            ),
+                          ],
                         ),
-                      ],
-                    ),
-                    child: SingleChildScrollView(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              const Text(
-                                'SCIENTIFIC NAME',
-                                style: TextStyle(
-                                    fontFamily: 'KantumruyPro-Bold',
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.w900,
-                                    color: Colors.black87),
-                              ),
-                              ElevatedButton(
-                                onPressed: () {
-                                  _playClickSound(); // Play sound on click
-                                  toggleLanguage();
-                                },
-                                style: ElevatedButton.styleFrom(
-                                  backgroundColor: Colors.green,
-                                  padding: const EdgeInsets.symmetric(
-                                      horizontal: 16, vertical: 8),
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(20),
-                                  ),
-                                ),
-                                child: Text(
-                                  currentLanguage == 'en'
-                                      ? 'SWITCH TO TAGALOG'
-                                      : 'SWITCH TO ENGLISH',
-                                  style: const TextStyle(
-                                      fontSize: 12, color: Colors.white),
-                                ),
-                              ),
-                            ],
-                          ),
-                          const SizedBox(height: 8),
-                          Text(
-                            details!['scientificName'][currentLanguage] ??
-                                'N/A',
-                            style: TextStyle(
-                                fontFamily: 'KantumruyPro-MediumItalic',
-                                fontSize: currentFontSize - 2,
-                                color: const Color.fromARGB(221, 58, 55, 55)),
-                          ),
-                          const SizedBox(height: 16),
-                          const Text(
-                            'DESCRIPTION:',
-                            style: TextStyle(
-                                fontFamily: 'KantumruyPro-Bold',
-                                fontSize: 18,
-                                color: Colors.black87),
-                          ),
-                          const SizedBox(height: 8),
-                          Text(
-                            details['description'][currentLanguage] ?? 'N/A',
-                            style: TextStyle(
-                                fontSize: currentFontSize,
-                                color: Colors.black87),
-                          ),
-                          const SizedBox(height: 16),
-                          const Text(
-                            'EFFECTS:',
-                            style: TextStyle(
-                                fontFamily: 'KantumruyPro-Bold',
-                                fontSize: 18,
-                                fontWeight: FontWeight.w900,
-                                color: Colors.black87),
-                          ),
-                          const SizedBox(height: 8),
-                          Text(
-                            details['effects'][currentLanguage] ?? 'N/A',
-                            style: TextStyle(
-                                fontSize: currentFontSize,
-                                color: Colors.black87),
-                          ),
-                        ],
                       ),
                     ),
-                  ),
-                ),
-              const SizedBox(height: 16),
-
               if (!widget.isHealthy)
                 SizedBox(
-                  width: double.infinity,
+                  width:
+                      double.infinity, // This line makes the button full width
                   child: ElevatedButton(
                     onPressed: () {
-                      _playClickSound(); // Play sound on click
+                      _playClickSound();
                       showRecommendationsModal(context);
                     },
                     style: ElevatedButton.styleFrom(

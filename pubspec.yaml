@@ -23,6 +23,9 @@ dependencies:
   file_saver: ^0.2.14
   flutter_colorpicker: ^1.0.3
   #audioplayers: ^6.1.0
+  
+  #google_ml_kit: ^0.19.0
+ # google_mlkit_object_detection: ^0.14.0
 
 dev_dependencies:
   flutter_test:
@@ -72,6 +75,7 @@ flutter:
     - assets/images/northern_leaf_blight_tip3_tl.png
     - assets/images/northern_leaf_blight_tip4_tl.png
     - assets/images/northern_leaf_blight_tip5_tl.png
+
     - assets/images/gray_leaf_spot_tip1_en.png
     - assets/images/gray_leaf_spot_tip2_en.png
     - assets/images/gray_leaf_spot_tip3_en.png
@@ -82,6 +86,51 @@ flutter:
     - assets/images/gray_leaf_spot_tip3_tl.png
     - assets/images/gray_leaf_spot_tip4_tl.png
     - assets/images/gray_leaf_spot_tip5_tl.png
+
+
+    - assets/images/banded_en (1).png
+    - assets/images/banded_en (2).png
+    - assets/images/banded_en (3).png
+    - assets/images/banded_en (4).png
+    - assets/images/banded_en (5).png
+    - assets/images/banded_en (6).png
+
+    - assets/images/banded_tl (1).png
+    - assets/images/banded_tl (2).png
+    - assets/images/banded_tl (3).png
+    - assets/images/banded_tl (4).png
+    - assets/images/banded_tl (5).png
+    - assets/images/banded_tl (6).png
+
+    - assets/images/mosaic_en(1).png
+    - assets/images/mosaic_en(2).png
+    - assets/images/mosaic_en(3).png
+    - assets/images/mosaic_en(4).png
+
+    - assets/images/mosaic_tl(1).png
+    - assets/images/mosaic_tl(2).png
+    - assets/images/mosaic_tl(3).png
+    - assets/images/mosaic_tl(4).png
+    
+
+    - assets/images/downy_en(1).png
+    - assets/images/downy_en(2).png
+    - assets/images/downy_en(3).png
+    - assets/images/downy_en(4).png
+    - assets/images/downy_en(5).png
+    - assets/images/downy_en(6).png
+
+    - assets/images/downy_tl(1).png
+    - assets/images/downy_tl(2).png
+    - assets/images/downy_tl(3).png
+    - assets/images/downy_tl(4).png
+    - assets/images/downy_tl(5).png
+    - assets/images/downy_tl(6).png
+
+
+    - assets/Object_Detector/maisDetector.tflite
+    - assets/Object_Detector/labels.txt
+    - assets/corn_background.webp
 
 
     

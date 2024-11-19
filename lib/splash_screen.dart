@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:camera/camera.dart';
 import 'package:logger/logger.dart';
 import '../services/camera_service.dart';
-import 'screens/home_screen.dart'; // Ensure the correct path to HomeScreen
+import '../screens/start_screen.dart'; // Path to the StartScreen
 
 var logger = Logger();
 
@@ -21,7 +21,6 @@ class SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
     _initializeCameraService(); // Initialize camera during splash screen
-    _navigateToHome(); // Navigate to home screen after splash
   }
 
   // Initialize CameraService during the splash screen
@@ -33,19 +32,18 @@ class SplashScreenState extends State<SplashScreen> {
     } else {
       logger.e('No camera found during splash screen initialization');
     }
+    _navigateToStartScreen(); // Navigate to StartScreen after initialization
   }
 
-  // Navigate to HomeScreen after splash
-  Future<void> _navigateToHome() async {
-    await Future.delayed(const Duration(seconds: 3)); // 3-second splash delay
-
+  // Navigate to StartScreen
+  Future<void> _navigateToStartScreen() async {
+    await Future.delayed(const Duration(seconds: 3)); // Splash delay
     if (!mounted) return;
 
-    // Navigate to HomeScreen and pass CameraService
     Navigator.pushReplacement(
       context,
       MaterialPageRoute(
-        builder: (context) => HomeScreen(cameraService: _cameraService),
+        builder: (context) => StartScreen(cameraService: _cameraService),
       ),
     );
   }
@@ -58,15 +56,16 @@ class SplashScreenState extends State<SplashScreen> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Center(
-            child: Image.asset('assets/MaiscannerLogo.png',
-                width: 150, height: 150),
+            child: Image.asset(
+              'assets/MaiscannerLogo.png',
+              width: 150,
+              height: 150,
+            ),
           ),
-          const SizedBox(height: 20), // Add space between logo and loading bar
+          const SizedBox(height: 20),
           const Padding(
-            padding: EdgeInsets.symmetric(
-                horizontal: 90), // Control width of loading bar
-            child:
-                LinearProgressIndicator(), // Loading bar instead of circular progress
+            padding: EdgeInsets.symmetric(horizontal: 90),
+            child: LinearProgressIndicator(),
           ),
         ],
       ),

@@ -14,7 +14,7 @@ class DiseaseInfo {
         'tl':
             'Kung hindi makontrol, ang Northern Leaf Spot ay maaaring magdulot ng pagbawas ng ani dahil sa pagkawala ng photosynthesis, panghihina ng halaman, at mahinang kalidad ng butil.'
       },
-      'recommendations': {
+      'plant_tips': {
         'en': [
           {
             'text':
@@ -106,7 +106,7 @@ class DiseaseInfo {
         'tl':
             'Sa malalang mga kaso, ang Common rust ay maaaring magdulot ng maagang pagkamatay ng dahon at pagbawas ng ani.'
       },
-      'recommendations': {
+      'plant_tips': {
         'en': [
           {
             'text': '1. Plant Resistant Hybrids.',
@@ -204,7 +204,7 @@ Pamahalaan ang Tubig: Iwasan ang sobrang pagdidilig upang mabawasan ang pagkabas
         'tl':
             'Ang malalang impeksyon ay maaaring magdulot ng pagbawas ng tisyu ng dahon, pagbawas ng ani, at pangkalahatang kalusugan ng halaman.'
       },
-      'recommendations': {
+      'plant_tips': {
         'en': [
           {
             'text': '1. Choose Resistant Varieties',
@@ -300,76 +300,88 @@ Bioseed® 9909 – Kilala sa magandang adaptasyon sa Pilipinas, ang barayting it
         'tl':
             'Ang sakit ay umuunlad sa mga dahon, balot ng dahon, at tangkay at maaaring kumalat sa bunga. Ang mga dahon at balot ng mais ay nagpapakita ng natatanging sintomas ng magkakasunod na pabilog na marka na may mga kulay na kupas, kayumanggi, kulay-tan, o kulay-abo.'
       },
-      'recommendations': {
+      'plant_tips': {
         'en': [
           {
             'text': '1. Use resistant varieties, if available.',
-            'image': 'assets/images/banded_leaf_tip1_en.png',
-            'explanation': '', // Added empty explanation
+            'image': 'assets/images/banded_en (1).png',
+            'explanation':
+                'Using resistant varieties of maize can help to reduce the spread of the disease. This is because these varieties are less susceptible to the disease and are able to grow healthier and more robustly.',
           },
           {
-            'text': '2. Avoid high crop densities in the field.',
-            'image': 'assets/images/banded_leaf_tip2_en.png',
-            'explanation': '', // Added empty explanation
+            'text': '2. Avoid high crop densities in the field',
+            'image': 'assets/images/banded_en (2).png',
+            'explanation':
+                'High crop density can lead to higher humidity and increased competition for resources, which can exacerbate the spread of the disease. By avoiding high crop densities, farmers can reduce the risk of the disease spreading.',
           },
           {
-            'text': '3. Remove and burn infected plants after harvest.',
-            'image': 'assets/images/banded_leaf_tip2_en.png',
-            'explanation': '', // Added empty explanation
-          },
-          {
-            'text':
-                '4. Make sure to keep the field clean and not to injure plants.',
-            'image': 'assets/images/banded_leaf_tip2_en.png',
-            'explanation': '', // Added empty explanation
+            'text': '3. Remove and burn infected plants after harvest',
+            'image': 'assets/images/banded_en (3).png',
+            'explanation':
+                'Removing and burning infected plants after harvest can help to reduce the amount of fungal spores that remain in the soil and can help to break the life cycle of the disease',
           },
           {
             'text':
-                '5. Strip off the lower infected leaves touching the soil along with their sheaths.',
-            'image': 'assets/images/banded_leaf_tip2_en.png',
-            'explanation': '', // Added empty explanation
+                '4. Make sure to keep the field clean and not to injure plants',
+            'image': 'assets/images/banded_en (4).png',
+            'explanation':
+                'Keeping the field clean and free of debris can help to reduce the risk of fungal spores spreading. Additionally, not injuring plants can help to reduce the risk of the disease entering the plant through wounds',
           },
           {
             'text':
-                '6. Crop rotation may help to control the spread of the disease to some degree.',
-            'image': 'assets/images/banded_leaf_tip2_en.png',
-            'explanation': '', // Added empty explanation
+                '5. Strip off the lower infected leaves touching the soil along with their sheaths',
+            'image': 'assets/images/banded_en (5).png',
+            'explanation':
+                'Stripping off the lower infected leaves touching the soil can help to reduce the amount of fungal spores that remain in the soil and can help to break the life cycle of the disease',
+          },
+          {
+            'text':
+                '6. Crop rotation may help to control the spread of the disease to some degree',
+            'image': 'assets/images/banded_en (6).png',
+            'explanation':
+                'Crop rotation can help to break the life cycle of the disease by removing the host plant and reducing the amount of fungal spores in the soil',
           }
         ],
         'tl': [
           {
-            'text': '1. Gumamit ng mga resistant na uri, kung available.',
-            'image': 'assets/images/banded_leaf_tip1_tl.png',
-            'explanation': '', // Added empty explanation
+            'text': '1. Gumamit ng mga resistant na uri, kung available',
+            'image': 'assets/images/banded_tl (1).png',
+            'explanation':
+                'Ang paggamit ng mga resistant na uri ng mais ay makakatulong upang mabawasan ang pagkalat ng sakit. Ito ay dahil ang mga uri na ito ay hindi gaanong madaling mahawa ng sakit at makapagpatubo ng mga halaman na mas malusog at mas malakas.',
           },
           {
-            'text': '2. Iwasan ang sobrang siksik na pagtatanim sa bukid.',
-            'image': 'assets/images/banded_leaf_tip2_tl.png',
-            'explanation': '', // Added empty explanation
-          },
-          {
-            'text':
-                '3. Alisin at sunugin ang mga nahawaang halaman pagkatapos ng ani.',
-            'image': 'assets/images/banded_leaf_tip2_tl.png',
-            'explanation': '', // Added empty explanation
+            'text': '2. Iwasan ang sobrang siksik na pagtatanim sa bukid',
+            'image': 'assets/images/banded_tl (2).png',
+            'explanation':
+                'Ang sobrang siksik na pagtatanim sa bukid ay maaaring magdulot ng mas mataas na humidity at mas malaking kompetisyon sa mga rekurso, na maaaring makapagpataas sa panganib ng pagkalat ng sakit. Sa pamamagitan ng pag-iwas sa sobrang siksik na pagtatanim, ang mga magsasaka ay maaaring makabawasan sa panganib ng pagkalat ng sakit',
           },
           {
             'text':
-                '4. Siguraduhing panatilihing malinis ang bukid at iwasang masugatan ang mga halaman.',
-            'image': 'assets/images/banded_leaf_tip2_tl.png',
-            'explanation': '', // Added empty explanation
+                '3. Alisin at sunugin ang mga nahawaang halaman pagkatapos ng ani',
+            'image': 'assets/images/banded_tl (3).png',
+            'explanation':
+                'Ang pag-alis at pag-sunog ng mga nahawaang halaman pagkatapos ng ani ay maaaring makatulong upang mabawasan ang dami ng fungal spores na nananatili sa lupa at makapagpataas sa pagkalat ng sakit',
           },
           {
             'text':
-                '5. Alisin ang mga mas mababang nahawaang dahon na nakadikit sa lupa kasama ang kanilang balot.',
-            'image': 'assets/images/banded_leaf_tip2_tl.png',
-            'explanation': '', // Added empty explanation
+                '4. Siguraduhing panatilihing malinis ang bukid at iwasang masugatan ang mga halaman',
+            'image': 'assets/images/banded_tl (4).png',
+            'explanation':
+                'Ang pagpanatili ng bukid na malinis at walang mga basura ay maaaring makatulong upang mabawasan ang panganib ng pagkalat ng sakit. Ang pag-iwas sa pag-sugatan ng mga halaman ay maaaring makatulong upang mabawasan ang panganib ng sakit na makapasok sa halaman sa pamamagitan ng mga sugat',
           },
           {
             'text':
-                '6. Ang crop rotation ay maaaring makatulong upang kontrolin ang pagkalat ng sakit hanggang sa ilang antas.',
-            'image': 'assets/images/banded_leaf_tip2_tl.png',
-            'explanation': '', // Added empty explanation
+                '5. Alisin ang mga mas mababang nahawaang dahon na nakadikit sa lupa kasama ang kanilang balot',
+            'image': 'assets/images/banded_tl (5).png',
+            'explanation':
+                'Ang pag-alis ng mga mas mababang nahawaang dahon na nakadikit sa lupa ay maaaring makatulong upang mabawasan ang dami ng fungal spores na nananatili sa lupa at makapagpataas sa pagkalat ng sakit',
+          },
+          {
+            'text':
+                '6. Ang crop rotation ay maaaring makatulong upang kontrolin ang pagkalat ng sakit hanggang sa ilang antas',
+            'image': 'assets/images/banded_tl (6).png',
+            'explanation':
+                'Ang crop rotation ay maaaring makatulong upang mabawasan ang dami ng fungal spores sa lupa at makapagpataas sa pagkalat ng sakit. Sa pamamagitan ng pag-iwas sa pagtatanim ng mga halaman na madaling mahawa ng sakit, ang mga magsasaka ay maaaring makabawasan sa panganib ng pagkalat ng sakit',
           }
         ],
       }
@@ -391,56 +403,64 @@ Ang Maize dwarf mosaic ay dulot ng Maize dwarf mosaic virus. Ang mga apektadong 
         'tl':
             'Ang mga halaman ay nananatiling maliit o hindi lumalaki ng maayos, at maaaring hindi mabuo ang mga bunga o magkaroon ng depekto ang mga ito na may mas kaunting buto kaysa karaniwan. Gayunpaman, ang bilang ng mga halaman na apektado ng sakit ay kadalasang maliit lamang, humigit-kumulang 1-2%, kaya malabong magdulot ito ng malaking pagbawas sa kabuuang ani.'
       },
-      'recommendations': {
+      'plant_tips': {
         'en': [
           {
             'text': '1. Pull out plants as soon as symptoms are seen',
-            'image': 'assets/images/corn_mosaic_tip1_en.png',
-            'explanation': '', // Added empty explanation
+            'image': 'assets/images/mosaic_en(1).png',
+            'explanation':
+                'Pull out the plants as soon as symptoms are seen to prevent the insects from breeding and spreading the disease.',
           },
           {
             'text':
                 '2.	Do not wait; otherwise, the insects will breed and spread the disease.',
-            'image': 'assets/images/corn_mosaic_tip2_en.png',
-            'explanation': '', // Added empty explanation
+            'image': 'assets/images/mosaic_en(2).png',
+            'explanation':
+                'Do not wait; otherwise, the insects will breed and spread the disease, and the plants will become more infected.',
           },
           {
             'text':
                 '3.	When pulling out the plants grasp the young leaves, holding them together, preventing the insects escaping from the “funnel” of leaves.',
-            'image': 'assets/images/corn_mosaic_tip2_en.png',
-            'explanation': '', // Added empty explanation
+            'image': 'assets/images/mosaic_en(3).png',
+            'explanation':
+                'When pulling out the plants, grasp the young leaves, holding them together, to prevent the insects from escaping from the “funnel” of leaves and spreading the disease.',
           },
           {
             'text':
                 '4.	Put the plants into a sack and burn them, destroying plants and insects.',
-            'image': 'assets/images/corn_mosaic_tip2_en.png',
-            'explanation': '', // Added empty explanation
+            'image': 'assets/images/mosaic_en(4).png',
+            'explanation':
+                'Put the plants into a sack and burn them, destroying the plants and insects, to prevent the disease from spreading to other plants. This is a drastic measure, but it is necessary to prevent the disease from spreading.'
           }
         ],
         'tl': [
           {
             'text':
                 '1. Bunutin ang mga halaman sa sandaling makita ang mga sintomas.',
-            'image': 'assets/images/corn_mosaic_tip1_tl.png',
-            'explanation': '', // Added empty explanation
+            'image': 'assets/images/mosaic_tl(1).png',
+            'explanation':
+                'Bunutin ang mga halaman sa sandaling makita ang mga sintomas upang maiwasan ang pagpaparami ng mga insekto at ang pagkalat ng sakit.',
           },
           {
             'text':
                 '2. Huwag maghintay; kung hindi, magpaparami ang mga insekto at kakalat ang sakit.',
-            'image': 'assets/images/corn_mosaic_tip2_tl.png',
-            'explanation': '', // Added empty explanation
+            'image': 'assets/images/mosaic_tl(2).png',
+            'explanation':
+                'Huwag maghintay; kung hindi, magpaparami ang mga insekto at kakalat ang sakit sa ibang mga halaman, at ang mga halaman ay gagawin pang mas apektado ng sakit.',
           },
           {
             'text':
-                '3. Kapag binubunot ang mga halaman, hawakan ang mga batang dahon at pagsama-samahin ang mga ito upang maiwasan ang pagtakas ng mga insekto mula sa “funnel” ng mga dahon.',
-            'image': 'assets/images/corn_mosaic_tip2_tl.png',
-            'explanation': '', // Added empty explanation
+                '3. Kapag binubunot ang mga halaman, hawakan ang mga batang dahon at pagsama-samahin ang mga ito upang maiwasan ang pagtakas ng mga insekto mula sa “funnel” ng mga dahon',
+            'image': 'assets/images/mosaic_tl(3).png',
+            'explanation':
+                'Kapag binubunot ang mga halaman, hawakan ang mga batang dahon at pagsama-samahin ang mga ito upang maiwasan ang pagtakas ng mga insekto mula sa “funnel” ng mga dahon at ang pagkalat ng sakit sa ibang mga halaman',
           },
           {
             'text':
                 '4. Ilagay ang mga halaman sa sako at sunugin upang masira ang mga halaman at insekto',
-            'image': 'assets/images/corn_mosaic_tip2_tl.png',
-            'explanation': '', // Added empty explanation
+            'image': 'assets/images/mosaic_tl(4).png',
+            'explanation':
+                'Ilagay ang mga halaman sa sako at sunugin upang masira ang mga halaman at insekto at maiwasan ang pagkalat ng sakit sa ibang mga halaman. Ito ay isang drastiko ng hakbang, ngunit ito ay kinakailangan upang maiwasan ang pagkalat ng sakit.',
           }
         ]
       }
@@ -462,73 +482,85 @@ Ang Maize dwarf mosaic ay dulot ng Maize dwarf mosaic virus. Ang mga apektadong 
         'tl': '''
 Maaaring maging depektibo ang mga tassel at maglabas ng mas kaunting polen, at ang mga bunga ay maaaring hindi mabuo.'''
       },
-      'recommendations': {
+      'plant_tips': {
         'en': [
           {
             'text': '1. Use resistant varieties, if available.',
-            'image': 'assets/images/downy_mildew_tip1_en.png',
-            'explanation': '', // Added empty explanation
+            'image': 'assets/images/downy_en(1).png',
+            'explanation':
+                'Using resistant varieties is the most effective way to control downy mildew. Resistant varieties are available for some crops, such as corn and wheat.',
           },
           {
             'text': '2. Use fungicide-coated seeds.',
-            'image': 'assets/images/downy_mildew_tip2_en.png',
-            'explanation': '', // Added empty explanation
+            'image': 'assets/images/downy_en(2).png',
+            'explanation':
+                'Fungicide-coated seeds are seeds that are treated with a fungicide before planting. This can help prevent downy mildew from infecting the seedlings.'
           },
           {
             'text': '3. Avoid areas prone to flooding.',
-            'image': 'assets/images/downy_mildew_tip2_en.png',
-            'explanation': '', // Added empty explanation
+            'image': 'assets/images/downy_en(3).png',
+            'explanation':
+                'Flooding can increase the risk of downy mildew. Avoid planting in areas that are prone to flooding.'
           },
           {
             'text': '4. Provide adequate drainage for surface water.',
-            'image': 'assets/images/downy_mildew_tip2_en.png',
-            'explanation': '', // Added empty explanation
+            'image': 'assets/images/downy_en(4).png',
+            'explanation':
+                'Providing adequate drainage for surface water can help reduce the risk of downy mildew.'
           },
           {
             'text':
                 '5. Maintain good field sanitation (e.g. remove and burn infected plants/plant parts as soon as initial symptoms are observed).',
-            'image': 'assets/images/downy_mildew_tip2_en.png',
-            'explanation': '', // Added empty explanation
+            'image': 'assets/images/downy_en(5).png',
+            'explanation':
+                'Maintaining good field sanitation is important for controlling downy mildew. Remove and burn any infected plants or plant parts as soon as initial symptoms are observed.'
           },
           {
             'text':
                 '6. Spray with fungicides such as metalaxyl+mancozeb (e.g. Ridomil®), dimethomorph+mancozeb (e.g. Acrobat®), propineb (e.g. Antracol®) or maneb(e.g. Maneb®).',
-            'image': 'assets/images/downy_mildew_tip2_en.png',
-            'explanation': '', // Added empty explanation
+            'image': 'assets/images/downy_en(6).png',
+            'explanation':
+                'Spraying with fungicides can help control downy mildew. Fungicides such as metalaxyl+mancozeb (Ridomil), dimethomorph+mancozeb (Acrobat), propineb (Antracol) or maneb (Maneb) can be used.'
           },
         ],
         'tl': [
           {
             'text': '1. Gumamit ng mga resistant na uri, kung available.',
-            'image': 'assets/images/downy_mildew_tip1_tl.png',
-            'explanation': '', // Added empty explanation
+            'image': 'assets/images/downy_tl(1).png',
+            'explanation':
+                'Ang paggamit ng mga resistant na uri ay ang pinaka-epektibong paraan upang kontrolin ang downy mildew. Ang mga resistant na uri ay available para sa ilang mga pananim, tulad ng mais at trigo.'
           },
           {
             'text': '2. Gumamit ng mga binhi na may fungicide coating.',
-            'image': 'assets/images/downy_mildew_tip2_tl.png',
-            'explanation': '', // Added empty explanation
+            'image': 'assets/images/downy_tl(2).png',
+            'explanation':
+                'Ang mga binhi na may fungicide coating ay binhi na ginagamitan ng fungicide bago ipatanim. Ito ay makakatulong upang maiwasan ang pagkalat ng downy mildew sa mga seedlings.'
           },
           {
             'text': '3. Iwasan ang mga lugar na madalas bahain.',
-            'image': 'assets/images/downy_mildew_tip2_tl.png',
-            'explanation': '', // Added empty explanation
+            'image': 'assets/images/downy_tl(3).png',
+            'explanation':
+                'Ang pagbaha ay makakapagpataas sa panganib ng downy mildew. Iwasan ang mga lugar na madalas bahain.'
           },
           {
             'text': '4. Siguraduhing may sapat na daluyan para sa tubig-ulan.',
-            'image': 'assets/images/downy_mildew_tip2_tl.png',
-            'explanation': '', // Added empty explanation
+            'image': 'assets/images/downy_tl(4).png',
+            'explanation':
+                'Ang pagbibigay ng sapat na daluyan para sa tubig-ulan ay makakatulong upang maiwasan ang pagkalat ng downy mildew.'
           },
           {
             'text':
                 '5. Panatilihin ang kalinisan sa bukid (hal. alisin at sunugin ang mga nahawaang halaman o bahagi ng halaman sa oras na makita ang mga unang sintomas).',
-            'image': 'assets/images/downy_mildew_tip2_tl.png',
-            'explanation': '', // Added empty explanation
+            'image': 'assets/images/downy_tl(5).png',
+            'explanation':
+                'Ang pagpapanatili ng kalinisan sa bukid ay mahalagang bahagi ng kontrol ng downy mildew. Alisin at sunugin ang mga nahawaang halaman o bahagi ng halaman sa oras na makita ang mga unang sintomas.'
           },
           {
             'text':
-                '6. Mag-spray ng mga fungicide tulad ng metalaxyl+mancozeb (hal. Ridomil®), dimethomorph+mancozeb (hal. Acrobat®), propineb (hal. Antracol®) o maneb (hal. Maneb®).',
-            'image': 'assets/images/downy_mildew_tip2_tl.png',
-            'explanation': '', // Added empty explanation
+                '6. Mag-spray ng mga fungicide tulad ng metalaxyl+mancozeb (hal. Ridomil), dimethomorph+mancozeb (hal. Acrobat), propineb (hal. Antracol) o maneb (hal. Maneb).',
+            'image': 'assets/images/downy_tl(6).png',
+            'explanation':
+                'Ang pag-spray ng mga fungicide ay makakatulong upang kontrolin ang downy mildew. Ang mga fungicide tulad ng metalaxyl+mancozeb (Ridomil), dimethomorph+mancozeb (Acrobat), propineb (Antracol) o maneb (Maneb) ay maaaring gamitin.'
           },
         ],
       }
@@ -540,7 +572,7 @@ Maaaring maging depektibo ang mga tassel at maglabas ng mas kaunting polen, at a
         'tl': 'Ang iyong halaman ay malusog!'
       },
       'effects': {'en': 'No adverse effects.', 'tl': 'Walang masamang epekto.'},
-      'recommendations': {
+      'plant_tips': {
         'en': [
           {
             'text': 'Keep monitoring your crops to ensure good health.',
