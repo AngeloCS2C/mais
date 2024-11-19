@@ -1,16 +1,15 @@
 # ma_iscanner_1
 
-A new Flutter project.
+A thesis project
+that classify 5 corn leaf disease with 1 healthy
 
 ## Getting Started
+splash or loading screen > start screen > Home screen > recommendation page>
 
-This project is a starting point for a Flutter application.
+data folder stores the contents(info of the corn diseases and recommendations)
 
-A few resources to get you started if this is your first Flutter project:
+services folder it stores 
+the ml service or the image clsssification and object detector is happening,
+it passes the result from object detector if cornleaf is detected then pass to image classification model then pass the result to recommendation page then recommendation pass and compare it to
+the data folder where that data is stored, if keys matches the string in data it will dispplay the contents of the specify diseasese
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
